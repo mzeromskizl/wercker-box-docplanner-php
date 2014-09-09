@@ -10,7 +10,7 @@ keywords:
 packages:
     - php@5.5
 script: |
-    phpenv 5.5
+    phpenv global 5.5
     echo | pecl install mongo
     pecl_memcached_ver="2.2.0"
     pecl download memcached-${pecl_memcached_ver}
