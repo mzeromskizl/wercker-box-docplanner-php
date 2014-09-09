@@ -4,21 +4,24 @@ inherits: wercker/php
 type: main
 platform: ubuntu@12.04
 description: wercker/php box with preinstalled dependencies for docplanner application
+keywords:
+    - docplanner
+    - php
+packages:
+    - php@5.5
 script: |-
-
-
-            phpenv 5.5
-            echo | pecl install mongo
-            pecl_memcached_ver="2.2.0"
-            pecl download memcached-${pecl_memcached_ver}
-            tar xzvf memcached-${pecl_memcached_ver}.tgz
-            cd memcached-${pecl_memcached_ver}/
-            phpize
-            ./configure --disable-memcached-sasl
-            make
-            make install
-            cd ..
-            rm -r memcached-${pecl_memcached_ver}
-            echo "extension=memcached.so" > 20-memcached.ini
-            phpenv config-add 20-memcached.ini
+    phpenv 5.5
+    echo | pecl install mongo
+    pecl_memcached_ver="2.2.0"
+    pecl download memcached-${pecl_memcached_ver}
+    tar xzvf memcached-${pecl_memcached_ver}.tgz
+    cd memcached-${pecl_memcached_ver}/
+    phpize
+    ./configure --disable-memcached-sasl
+    make
+    make install
+    cd ..
+    rm -r memcached-${pecl_memcached_ver}
+    echo "extension=memcached.so" > 20-memcached.ini
+    phpenv config-add 20-memcached.ini
 
