@@ -10,7 +10,7 @@ keywords:
 script: |
     phpenv global 5.5
     echo | pecl install mongo
-    echo | pecl install apcu
+    echo | pecl install channel://pecl.php.net/apcu-4.0.6
     pecl_memcached_ver="2.2.0"
     pecl download memcached-${pecl_memcached_ver}
     tar xzvf memcached-${pecl_memcached_ver}.tgz
