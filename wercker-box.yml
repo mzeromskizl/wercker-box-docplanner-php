@@ -1,5 +1,5 @@
 name: docplanner-php
-version: 0.0.1
+version: 0.0.2
 inherits: wercker/php@1.1.0
 type: main
 platform: ubuntu@12.04
@@ -7,11 +7,10 @@ description: wercker/php box with preinstalled dependencies for docplanner appli
 keywords:
     - docplanner
     - php
-packages:
-    - php@5.5
 script: |
     phpenv global 5.5
     echo | pecl install mongo
+    echo | pecl install apc
     pecl_memcached_ver="2.2.0"
     pecl download memcached-${pecl_memcached_ver}
     tar xzvf memcached-${pecl_memcached_ver}.tgz
