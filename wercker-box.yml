@@ -1,5 +1,5 @@
 name: docplanner-php
-version: 0.0.3
+version: 0.0.4
 inherits: wercker/php@1.1.0
 type: main
 platform: ubuntu@12.04
