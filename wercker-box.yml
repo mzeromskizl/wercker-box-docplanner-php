@@ -23,3 +23,4 @@ script: |
     rm -r memcached-${pecl_memcached_ver}
     echo "extension=memcached.so" > 20-memcached.ini
     phpenv config-add 20-memcached.ini
+    echo | pecl install imagick
